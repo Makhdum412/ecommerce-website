@@ -79,7 +79,7 @@ forever-full-stack/
 ## ▶️Live Demo
 
 ## FRONTEND:
-https://ecommerce-website-admin.onrender.com/
+https://ecommerce-website-frontend-d0kx.onrender.com/
 
 ## 🛠️ Installation & Setup
 
@@ -259,4 +259,5 @@ If you have any questions or need help with the project:
 ⭐ **Star this repository if you found it helpful!**
 
 **Happy Coding! 🚀**
+
 
