@@ -10,7 +10,7 @@ import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 export const backendUrl = "https://ecommerce-website-backend-d1h6.onrender.com"
-export const currency = '$'
+export const currency = '₹'
 
 const App = () => {
 
