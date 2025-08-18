@@ -56,7 +56,9 @@ import p_img52 from './p_img52.png'
 
 
 import logo from './logo.png'
+import logo2 from './logo2.png'
 import hero_img from './hero_img.png'
+import carousel from './carousel.png'
 import cart_icon from './cart_icon.png'
 import bin_icon from './bin_icon.png'
 import dropdown_icon from './dropdown_icon.png'
@@ -70,13 +72,18 @@ import support_img from './support_img.png'
 import menu_icon from './menu_icon.png'
 import about_img from './about_img.png'
 import contact_img from './contact_img.png'
+import contactus from './contactus.png'
+import aboutus from './aboutus.jpg'
+import indiaflag from './indiaflag.png'
 import razorpay_logo from './razorpay_logo.png'
 import stripe_logo from './stripe_logo.png'
 import cross_icon from './cross_icon.png'
 
 export const assets = {
     logo,
+    logo2,
     hero_img,
+    carousel,
     cart_icon,
     dropdown_icon,
     exchange_icon,
@@ -90,6 +97,9 @@ export const assets = {
     menu_icon,
     about_img,
     contact_img,
+    contactus,
+    aboutus,
+    indiaflag,
     razorpay_logo,
     stripe_logo,
     cross_icon
@@ -103,7 +113,7 @@ export const products = [
         price: 100,
         image: [p_img1],
         category: "Women",
-        subCategory: "Topwear",
+        subCategory: "Tops",
         sizes: ["S", "M", "L"],
         date: 1716634345448,
         bestseller: true
@@ -115,7 +125,7 @@ export const products = [
         price: 200,
         image: [p_img2_1,p_img2_2,p_img2_3,p_img2_4],
         category: "Men",
-        subCategory: "Topwear",
+        subCategory: "Shirts",
         sizes: ["M", "L", "XL"],
         date: 1716621345448,
         bestseller: true
@@ -126,8 +136,8 @@ export const products = [
         description: "A lightweight, usually knitted, pullover shirt, close-fitting and with a round neckline and short sleeves, worn as an undershirt or outer garment.",
         price: 220,
         image: [p_img3],
-        category: "Kids",
-        subCategory: "Topwear",
+        category: "Accessories",
+        subCategory: "Tops",
         sizes: ["S", "L", "XL"],
         date: 1716234545448,
         bestseller: true
@@ -139,7 +149,7 @@ export const products = [
         price: 110,
         image: [p_img4],
         category: "Men",
-        subCategory: "Topwear",
+        subCategory: "Shirts",
         sizes: ["S", "M", "XXL"],
         date: 1716621345448,
         bestseller: true
@@ -151,7 +161,7 @@ export const products = [
         price: 130,
         image: [p_img5],
         category: "Women",
-        subCategory: "Topwear",
+        subCategory: "Tops",
         sizes: ["M", "L", "XL"],
         date: 1716622345448,
         bestseller: true
@@ -162,8 +172,8 @@ export const products = [
         description: "A lightweight, usually knitted, pullover shirt, close-fitting and with a round neckline and short sleeves, worn as an undershirt or outer garment.",
         price: 140,
         image: [p_img6],
-        category: "Kids",
-        subCategory: "Topwear",
+        category: "Accessories",
+        subCategory: "Tops",
         sizes: ["S", "L", "XL"],
         date: 1716623423448,
         bestseller: true
@@ -175,7 +185,7 @@ export const products = [
         price: 190,
         image: [p_img7],
         category: "Men",
-        subCategory: "Bottomwear",
+        subCategory: "Lowers",
         sizes: ["S", "L", "XL"],
         date: 1716621542448,
         bestseller: false
@@ -187,7 +197,7 @@ export const products = [
         price: 140,
         image: [p_img8],
         category: "Men",
-        subCategory: "Topwear",
+        subCategory: "Shirts",
         sizes: ["S", "M", "L", "XL"],
         date: 1716622345448,
         bestseller: false
@@ -198,8 +208,8 @@ export const products = [
         description: "A lightweight, usually knitted, pullover shirt, close-fitting and with a round neckline and short sleeves, worn as an undershirt or outer garment.",
         price: 100,
         image: [p_img9],
-        category: "Kids",
-        subCategory: "Topwear",
+        category: "Accessories",
+        subCategory: "Tops",
         sizes: ["M", "L", "XL"],
         date: 1716621235448,
         bestseller: false
@@ -211,7 +221,7 @@ export const products = [
         price: 110,
         image: [p_img10],
         category: "Men",
-        subCategory: "Bottomwear",
+        subCategory: "Lowers",
         sizes: ["S", "L", "XL"],
         date: 1716622235448,
         bestseller: false
@@ -223,7 +233,7 @@ export const products = [
         price: 120,
         image: [p_img11],
         category: "Men",
-        subCategory: "Topwear",
+        subCategory: "Shirts",
         sizes: ["S", "M", "L"],
         date: 1716623345448,
         bestseller: false
@@ -235,7 +245,7 @@ export const products = [
         price: 150,
         image: [p_img12],
         category: "Men",
-        subCategory: "Topwear",
+        subCategory: "Shirts",
         sizes: ["S", "M", "L", "XL"],
         date: 1716624445448,
         bestseller: false
@@ -247,7 +257,7 @@ export const products = [
         price: 130,
         image: [p_img13],
         category: "Women",
-        subCategory: "Topwear",
+        subCategory: "Tops",
         sizes: ["S", "M", "L", "XL"],
         date: 1716625545448,
         bestseller: false
@@ -258,8 +268,8 @@ export const products = [
         description: "A lightweight, usually knitted, pullover shirt, close-fitting and with a round neckline and short sleeves, worn as an undershirt or outer garment.",
         price: 160,
         image: [p_img14],
-        category: "Kids",
-        subCategory: "Topwear",
+        category: "Accessories",
+        subCategory: "Shirts",
         sizes: ["S", "M", "L", "XL"],
         date: 1716626645448,
         bestseller: false
@@ -271,7 +281,7 @@ export const products = [
         price: 140,
         image: [p_img15],
         category: "Men",
-        subCategory: "Bottomwear",
+        subCategory: "Lowers",
         sizes: ["S", "M", "L", "XL"],
         date: 1716627745448,
         bestseller: false
@@ -282,8 +292,8 @@ export const products = [
         description: "A lightweight, usually knitted, pullover shirt, close-fitting and with a round neckline and short sleeves, worn as an undershirt or outer garment.",
         price: 170,
         image: [p_img16],
-        category: "Kids",
-        subCategory: "Topwear",
+        category: "Accessories",
+        subCategory: "Tops",
         sizes: ["S", "M", "L", "XL"],
         date: 1716628845448,
         bestseller: false
@@ -295,7 +305,7 @@ export const products = [
         price: 150,
         image: [p_img17],
         category: "Men",
-        subCategory: "Bottomwear",
+        subCategory: "Lowers",
         sizes: ["S", "M", "L", "XL"],
         date: 1716629945448,
         bestseller: false
@@ -306,8 +316,8 @@ export const products = [
         description: "A lightweight, usually knitted, pullover shirt, close-fitting and with a round neckline and short sleeves, worn as an undershirt or outer garment.",
         price: 180,
         image: [p_img18],
-        category: "Kids",
-        subCategory: "Topwear",
+        category: "Accessories",
+        subCategory: "Shirts",
         sizes: ["S", "M", "L", "XL"],
         date: 1716631045448,
         bestseller: false
@@ -318,8 +328,8 @@ export const products = [
         description: "A lightweight, usually knitted, pullover shirt, close-fitting and with a round neckline and short sleeves, worn as an undershirt or outer garment.",
         price: 160,
         image: [p_img19],
-        category: "Kids",
-        subCategory: "Topwear",
+        category: "Accessories",
+        subCategory: "Shirts",
         sizes: ["S", "M", "L", "XL"],
         date: 1716632145448,
         bestseller: false
@@ -331,7 +341,7 @@ export const products = [
         price: 190,
         image: [p_img20],
         category: "Women",
-        subCategory: "Bottomwear",
+        subCategory: "Lowers",
         sizes: ["S", "M", "L", "XL"],
         date: 1716633245448,
         bestseller: false
@@ -343,7 +353,7 @@ export const products = [
         price: 170,
         image: [p_img21],
         category: "Women",
-        subCategory: "Winterwear",
+        subCategory: "Jackets & Blazers",
         sizes: ["S", "M", "L", "XL"],
         date: 1716634345448,
         bestseller: false
@@ -355,7 +365,7 @@ export const products = [
         price: 200,
         image: [p_img22],
         category: "Women",
-        subCategory: "Bottomwear",
+        subCategory: "Lowers",
         sizes: ["S", "M", "L", "XL"],
         date: 1716635445448,
         bestseller: false
@@ -366,8 +376,8 @@ export const products = [
         description: "A lightweight, usually knitted, pullover shirt, close-fitting and with a round neckline and short sleeves, worn as an undershirt or outer garment.",
         price: 180,
         image: [p_img23],
-        category: "Kids",
-        subCategory: "Topwear",
+        category: "Accessories",
+        subCategory: "Shirts",
         sizes: ["S", "M", "L", "XL"],
         date: 1716636545448,
         bestseller: false
@@ -378,8 +388,8 @@ export const products = [
         description: "A lightweight, usually knitted, pullover shirt, close-fitting and with a round neckline and short sleeves, worn as an undershirt or outer garment.",
         price: 210,
         image: [p_img24],
-        category: "Kids",
-        subCategory: "Topwear",
+        category: "Accessories",
+        subCategory: "Shirts",
         sizes: ["S", "M", "L", "XL"],
         date: 1716637645448,
         bestseller: false
@@ -390,8 +400,8 @@ export const products = [
         description: "A lightweight, usually knitted, pullover shirt, close-fitting and with a round neckline and short sleeves, worn as an undershirt or outer garment.",
         price: 190,
         image: [p_img25],
-        category: "Kids",
-        subCategory: "Topwear",
+        category: "Accessories",
+        subCategory: "Tops",
         sizes: ["S", "M", "L", "XL"],
         date: 1716638745448,
         bestseller: false
@@ -403,7 +413,7 @@ export const products = [
         price: 220,
         image: [p_img26],
         category: "Women",
-        subCategory: "Winterwear",
+        subCategory: "Jackets & Blazers",
         sizes: ["S", "M", "L", "XL"],
         date: 1716639845448,
         bestseller: false
@@ -414,8 +424,8 @@ export const products = [
         description: "A lightweight, usually knitted, pullover shirt, close-fitting and with a round neckline and short sleeves, worn as an undershirt or outer garment.",
         price: 200,
         image: [p_img27],
-        category: "Kids",
-        subCategory: "Topwear",
+        category: "Accessories",
+        subCategory: "Tops",
         sizes: ["S", "M", "L", "XL"],
         date: 1716640945448,
         bestseller: false
@@ -427,7 +437,7 @@ export const products = [
         price: 230,
         image: [p_img28],
         category: "Men",
-        subCategory: "Winterwear",
+        subCategory: "Jackets & Blazers",
         sizes: ["S", "M", "L", "XL"],
         date: 1716642045448,
         bestseller: false
@@ -439,7 +449,7 @@ export const products = [
         price: 210,
         image: [p_img29],
         category: "Women",
-        subCategory: "Topwear",
+        subCategory: "Tops",
         sizes: ["S", "M", "L", "XL"],
         date: 1716643145448,
         bestseller: false
@@ -450,8 +460,8 @@ export const products = [
         description: "A lightweight, usually knitted, pullover shirt, close-fitting and with a round neckline and short sleeves, worn as an undershirt or outer garment.",
         price: 240,
         image: [p_img30],
-        category: "Kids",
-        subCategory: "Topwear",
+        category: "Accessories",
+        subCategory: "Tops",
         sizes: ["S", "M", "L", "XL"],
         date: 1716644245448,
         bestseller: false
@@ -463,7 +473,7 @@ export const products = [
         price: 220,
         image: [p_img31],
         category: "Men",
-        subCategory: "Topwear",
+        subCategory: "Shirts",
         sizes: ["S", "M", "L", "XL"],
         date: 1716645345448,
         bestseller: false
@@ -475,7 +485,7 @@ export const products = [
         price: 250,
         image: [p_img32],
         category: "Men",
-        subCategory: "Topwear",
+        subCategory: "Shirts",
         sizes: ["S", "M", "L", "XL"],
         date: 1716646445448,
         bestseller: false
@@ -486,8 +496,8 @@ export const products = [
         description: "A lightweight, usually knitted, pullover shirt, close-fitting and with a round neckline and short sleeves, worn as an undershirt or outer garment.",
         price: 230,
         image: [p_img33],
-        category: "Kids",
-        subCategory: "Topwear",
+        category: "Accessories",
+        subCategory: "Tops",
         sizes: ["S", "M", "L", "XL"],
         date: 1716647545448,
         bestseller: false
@@ -499,7 +509,7 @@ export const products = [
         price: 260,
         image: [p_img34],
         category: "Women",
-        subCategory: "Topwear",
+        subCategory: "Tops",
         sizes: ["S", "M", "L", "XL"],
         date: 1716648645448,
         bestseller: false
@@ -511,7 +521,7 @@ export const products = [
         price: 240,
         image: [p_img35],
         category: "Women",
-        subCategory: "Winterwear",
+        subCategory: "Jackets & Blazers",
         sizes: ["S", "M", "L", "XL"],
         date: 1716649745448,
         bestseller: false
@@ -523,7 +533,7 @@ export const products = [
         price: 270,
         image: [p_img36],
         category: "Women",
-        subCategory: "Winterwear",
+        subCategory: "Jackets & Blazers",
         sizes: ["S", "M", "L", "XL"],
         date: 1716650845448,
         bestseller: false
@@ -535,7 +545,7 @@ export const products = [
         price: 250,
         image: [p_img37],
         category: "Women",
-        subCategory: "Topwear",
+        subCategory: "Tops",
         sizes: ["S", "M", "L", "XL"],
         date: 1716651945448,
         bestseller: false
@@ -547,7 +557,7 @@ export const products = [
         price: 280,
         image: [p_img38],
         category: "Men",
-        subCategory: "Topwear",
+        subCategory: "Shirts",
         sizes: ["S", "M", "L", "XL"],
         date: 1716653045448,
         bestseller: false
@@ -559,7 +569,7 @@ export const products = [
         price: 260,
         image: [p_img39],
         category: "Men",
-        subCategory: "Topwear",
+        subCategory: "Shirts",
         sizes: ["S", "M", "L", "XL"],
         date: 1716654145448,
         bestseller: false
@@ -571,7 +581,7 @@ export const products = [
         price: 290,
         image: [p_img40],
         category: "Men",
-        subCategory: "Winterwear",
+        subCategory: "Jackets & Blazers",
         sizes: ["S", "M", "L", "XL"],
         date: 1716655245448,
         bestseller: false
@@ -583,7 +593,7 @@ export const products = [
         price: 270,
         image: [p_img41],
         category: "Men",
-        subCategory: "Topwear",
+        subCategory: "Shirts",
         sizes: ["S", "M", "L", "XL"],
         date: 1716656345448,
         bestseller: false
@@ -594,8 +604,8 @@ export const products = [
         description: "A lightweight, usually knitted, pullover shirt, close-fitting and with a round neckline and short sleeves, worn as an undershirt or outer garment.",
         price: 300,
         image: [p_img42],
-        category: "Kids",
-        subCategory: "Topwear",
+        category: "Accessories",
+        subCategory: "Shirts",
         sizes: ["S", "M", "L", "XL"],
         date: 1716657445448,
         bestseller: false
@@ -606,8 +616,8 @@ export const products = [
         description: "A lightweight, usually knitted, pullover shirt, close-fitting and with a round neckline and short sleeves, worn as an undershirt or outer garment.",
         price: 280,
         image: [p_img43],
-        category: "Kids",
-        subCategory: "Bottomwear",
+        category: "Accessories",
+        subCategory: "Lowers",
         sizes: ["S", "M", "L", "XL"],
         date: 1716658545448,
         bestseller: false
@@ -619,7 +629,7 @@ export const products = [
         price: 310,
         image: [p_img44],
         category: "Women",
-        subCategory: "Winterwear",
+        subCategory: "Jackets & Blazers",
         sizes: ["S", "M", "L", "XL"],
         date: 1716659645448,
         bestseller: false
@@ -631,7 +641,7 @@ export const products = [
         price: 290,
         image: [p_img45],
         category: "Men",
-        subCategory: "Winterwear",
+        subCategory: "Jackets & Blazers",
         sizes: ["S", "M", "L", "XL"],
         date: 1716660745448,
         bestseller: false
@@ -643,7 +653,7 @@ export const products = [
         price: 320,
         image: [p_img46],
         category: "Men",
-        subCategory: "Winterwear",
+        subCategory: "Jackets & Blazers",
         sizes: ["S", "M", "L", "XL"],
         date: 1716661845448,
         bestseller: false
@@ -654,8 +664,8 @@ export const products = [
         description: "A lightweight, usually knitted, pullover shirt, close-fitting and with a round neckline and short sleeves, worn as an undershirt or outer garment.",
         price: 300,
         image: [p_img47],
-        category: "Kids",
-        subCategory: "Bottomwear",
+        category: "Accessories",
+        subCategory: "Lowers",
         sizes: ["S", "M", "L", "XL"],
         date: 1716662945448,
         bestseller: false
@@ -667,7 +677,7 @@ export const products = [
         price: 330,
         image: [p_img48],
         category: "Men",
-        subCategory: "Winterwear",
+        subCategory: "Jackets & Blazers",
         sizes: ["S", "M", "L", "XL"],
         date: 1716664045448,
         bestseller: false
@@ -678,8 +688,8 @@ export const products = [
         description: "A lightweight, usually knitted, pullover shirt, close-fitting and with a round neckline and short sleeves, worn as an undershirt or outer garment.",
         price: 310,
         image: [p_img49],
-        category: "Kids",
-        subCategory: "Bottomwear",
+        category: "Accessories",
+        subCategory: "Lowers",
         sizes: ["S", "M", "L", "XL"],
         date: 1716665145448,
         bestseller: false
@@ -690,8 +700,8 @@ export const products = [
         description: "A lightweight, usually knitted, pullover shirt, close-fitting and with a round neckline and short sleeves, worn as an undershirt or outer garment.",
         price: 340,
         image: [p_img50],
-        category: "Kids",
-        subCategory: "Bottomwear",
+        category: "Accessories",
+        subCategory: "Lowers",
         sizes: ["S", "M", "L", "XL"],
         date: 1716666245448, bestseller: false
     },
@@ -702,7 +712,7 @@ export const products = [
         price: 320,
         image: [p_img51],
         category: "Women",
-        subCategory: "Winterwear",
+        subCategory: "Jackets & Blazers",
         sizes: ["S", "M", "L", "XL"],
         date: 1716667345448,
         bestseller: false
@@ -714,7 +724,7 @@ export const products = [
         price: 350,
         image: [p_img52],
         category: "Men",
-        subCategory: "Winterwear",
+        subCategory: "Jackets & Blazers",
         sizes: ["S", "M", "L", "XL"],
         date: 1716668445448,
         bestseller: false

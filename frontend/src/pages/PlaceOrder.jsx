@@ -29,6 +29,18 @@ const PlaceOrder = () => {
     }
 
     const initPay = (order) => {
+        // Debug: Log environment variables
+        console.log('Environment Variables:', {
+            VITE_RAZORPAY_KEY_ID: import.meta.env.VITE_RAZORPAY_KEY_ID,
+            VITE_BACKEND_URL: import.meta.env.VITE_BACKEND_URL
+        })
+        
+        // Check if Razorpay key is configured
+        if (!import.meta.env.VITE_RAZORPAY_KEY_ID || import.meta.env.VITE_RAZORPAY_KEY_ID === 'your_razorpay_key_id') {
+            toast.error('Razorpay is not configured. Please contact administrator.')
+            return
+        }
+
         const options = {
             key: import.meta.env.VITE_RAZORPAY_KEY_ID,
             amount: order.amount,
@@ -38,22 +50,38 @@ const PlaceOrder = () => {
             order_id: order.id,
             receipt: order.receipt,
             handler: async (response) => {
-                console.log(response)
+                console.log('Payment Response:', response)
                 try {
-                    
-                    const { data } = await axios.post(backendUrl + '/api/order/verifyRazorpay',response,{headers:{token}})
+                    const { data } = await axios.post(backendUrl + '/api/order/verifyRazorpay', response, {headers:{token}})
                     if (data.success) {
+                        toast.success('Payment successful!')
                         navigate('/orders')
                         setCartItems({})
+                    } else {
+                        toast.error(data.message || 'Payment verification failed')
                     }
                 } catch (error) {
-                    console.log(error)
-                    toast.error(error)
+                    console.error('Payment Verification Error:', error)
+                    toast.error(error.response?.data?.message || 'Payment verification failed')
                 }
+            },
+            prefill: {
+                name: formData.firstName + ' ' + formData.lastName,
+                email: formData.email,
+                contact: formData.phone
+            },
+            theme: {
+                color: "#000000"
             }
         }
-        const rzp = new window.Razorpay(options)
-        rzp.open()
+        
+        try {
+            const rzp = new window.Razorpay(options)
+            rzp.open()
+        } catch (error) {
+            console.error('Razorpay initialization error:', error)
+            toast.error('Failed to initialize Razorpay payment')
+        }
     }
 
     const onSubmitHandler = async (event) => {
@@ -106,12 +134,17 @@ const PlaceOrder = () => {
                     break;
 
                 case 'razorpay':
-
-                    const responseRazorpay = await axios.post(backendUrl + '/api/order/razorpay', orderData, {headers:{token}})
-                    if (responseRazorpay.data.success) {
-                        initPay(responseRazorpay.data.order)
+                    try {
+                        const responseRazorpay = await axios.post(backendUrl + '/api/order/razorpay', orderData, {headers:{token}})
+                        if (responseRazorpay.data.success) {
+                            initPay(responseRazorpay.data.order)
+                        } else {
+                            toast.error(responseRazorpay.data.message || 'Razorpay order creation failed')
+                        }
+                    } catch (error) {
+                        console.error('Razorpay Error:', error)
+                        toast.error(error.response?.data?.message || 'Razorpay payment failed. Please check your configuration.')
                     }
-
                     break;
 
                 default:

@@ -100,18 +100,29 @@ const Add = ({token}) => {
             <div>
               <p className='mb-2'>Product category</p>
               <select onChange={(e) => setCategory(e.target.value)} className='w-full px-3 py-2'>
-                  <option value="Men">Men</option>
-                  <option value="Women">Women</option>
-                  <option value="Kids">Kids</option>
+                  <option value="Dresses">Dresses</option>
+                  <option value="Co-Ords">Co-Ords</option>
+                  <option value="Jumpsuits">Jumpsuits</option>
+                  <option value="Cover-ups">Cover-ups</option>
+                  <option value="Shirts">Shirts</option>
+                  <option value="Tops">Tops</option>
+                  <option value="Lowers">Lowers</option>
+                  <option value="Men">Men's collection</option>
+                  <option value="Accessories">Accessories</option>
               </select>
             </div>
 
             <div>
               <p className='mb-2'>Sub category</p>
               <select onChange={(e) => setSubCategory(e.target.value)} className='w-full px-3 py-2'>
-                  <option value="Topwear">Topwear</option>
-                  <option value="Bottomwear">Bottomwear</option>
-                  <option value="Winterwear">Winterwear</option>
+                  <option value="New Arrivals">New Arrivals</option>
+                  <option value="Best sellers">Best sellers</option>
+                  <option value="Sale">Sale</option>
+                  <option value="Azure">Azure</option>
+                  <option value="Palms & paradise">Palms & paradise</option>
+                  <option value="Ebru">Ebru</option>
+                  <option value="Shades of you">Shades of you</option>
+                  <option value="Curio">Curio</option>
               </select>
             </div>
 
