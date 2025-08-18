@@ -1,4 +1,4 @@
-﻿# 🛍️ E-Commerce Full-Stack Application
+﻿# 🛍️ Islavida E-Commerce Platform
 
 A modern, feature-rich e-commerce platform built with the MERN stack (MongoDB, Express.js, React, Node.js) featuring a customer-facing frontend, admin panel, and robust backend API.
 
@@ -33,28 +33,30 @@ A modern, feature-rich e-commerce platform built with the MERN stack (MongoDB, E
 - **Vite 5.4.1** - Fast build tool and dev server
 - **React Router DOM 6.26.1** - Client-side routing
 - **Tailwind CSS 3.4.10** - Utility-first CSS framework
-- **Axios** - HTTP client for API communication
-- **React Toastify** - User notifications
+- **Axios 1.7.4** - HTTP client for API communication
+- **React Toastify 10.0.5** - User notifications
 
 ### Backend
 - **Node.js** - JavaScript runtime
 - **Express.js 4.19.2** - Web application framework
 - **MongoDB** - NoSQL database
 - **Mongoose 8.5.3** - MongoDB object modeling
-- **JWT** - Authentication and authorization
-- **bcryptjs** - Password security
-- **Multer** - File upload handling
+- **JWT 9.0.2** - Authentication and authorization
+- **bcryptjs 2.4.3** - Password security
+- **Multer 1.4.5-lts.1** - File upload handling
+- **CORS 2.8.5** - Cross-origin resource sharing
+- **Validator 13.12.0** - Input validation
 
 ### Services & Integrations
-- **Cloudinary** - Cloud image/video management
-- **Stripe** - Payment processing
-- **Razorpay** - Alternative payment gateway
+- **Cloudinary 2.4.0** - Cloud image/video management
+- **Stripe 16.8.0** - Payment processing
+- **Razorpay 2.9.4** - Alternative payment gateway
 - **Vercel** - Deployment platform
 
 ## 📁 Project Structure
 
 ```
-forever-full-stack/
+ecommerce-website/
 ├── frontend/                 # Customer-facing React app
 │   ├── src/
 │   │   ├── components/      # Reusable UI components
@@ -72,28 +74,33 @@ forever-full-stack/
 │   ├── controllers/        # Business logic
 │   ├── middleware/         # Custom middleware
 │   ├── config/             # Configuration files
+│   ├── vercel.json         # Vercel deployment config
 │   └── server.js           # Main server file
+├── RAZORPAY_TROUBLESHOOTING.md  # Payment gateway troubleshooting
 └── README.md               # This file
 ```
 
-## ▶️Live Demo
+## 🌐 Live Demo
 
-## FRONTEND:
+### Frontend (Customer Portal)
 https://ecommerce-website-frontend-d0kx.onrender.com/
+
+### Admin Panel
+*Deployed separately - check deployment section for setup*
 
 ## 🛠️ Installation & Setup
 
 ### Prerequisites
 - Node.js (v16 or higher)
-- MongoDB database
+- MongoDB database (local or MongoDB Atlas)
 - Cloudinary account
 - Stripe account (optional)
 - Razorpay account (optional)
 
 ### 1. Clone the Repository
 ```bash
-git clone https://github.com/yourusername/forever-full-stack.git
-cd forever-full-stack
+git clone <your-repository-url>
+cd ecommerce-website
 ```
 
 ### 2. Backend Setup
@@ -227,6 +234,17 @@ npm start
 - **Backend**: Deploy to Railway, Render, or any Node.js hosting
 - **Database**: Use MongoDB Atlas for cloud database
 
+## 🔧 Troubleshooting
+
+### Payment Gateway Issues
+Check the `RAZORPAY_TROUBLESHOOTING.md` file for common Razorpay integration issues and solutions.
+
+### Common Issues
+- Ensure all environment variables are properly set
+- Check MongoDB connection string format
+- Verify Cloudinary credentials
+- Ensure CORS is properly configured for your domain
+
 ## 🤝 Contributing
 
 1. Fork the repository
@@ -245,6 +263,7 @@ This project is licensed under the ISC License - see the [LICENSE](LICENSE) file
 - **Express.js** for the robust backend framework
 - **Tailwind CSS** for the utility-first CSS framework
 - **MongoDB** for the flexible database solution
+- **Vite** for the fast build tooling
 
 ## 📞 Support
 
@@ -253,6 +272,7 @@ If you have any questions or need help with the project:
 - Create an issue in the GitHub repository
 - Check the existing issues for solutions
 - Review the code comments for implementation details
+- Check the troubleshooting documentation
 
 ---
 
