@@ -58,7 +58,10 @@ const Product = () => {
               <img src={assets.star_dull_icon} alt="" className="w-3 5" />
               <p className='pl-2'>(122)</p>
           </div>
-          <p className='mt-5 text-3xl font-medium'>{currency}{productData.price}</p>
+          <div className='mt-5 flex items-baseline gap-3'>
+            {productData.mrp ? <span className='text-gray-400 line-through text-2xl'>{currency}{productData.mrp}</span> : null}
+            <span className='text-3xl font-medium'>{currency}{productData.price}</span>
+          </div>
           <p className='mt-5 text-gray-500 md:w-4/5'>{productData.description}</p>
           <div className='flex flex-col gap-4 my-8'>
               <p>Select Size</p>

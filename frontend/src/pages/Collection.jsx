@@ -3,6 +3,7 @@ import { ShopContext } from '../context/ShopContext'
 import { assets } from '../assets/assets';
 import Title from '../components/Title';
 import ProductItem from '../components/ProductItem';
+import { PRODUCT_CATEGORIES, PRODUCT_SUBCATEGORIES } from '../constants/categories.js';
 
 const Collection = () => {
 
@@ -94,63 +95,26 @@ const Collection = () => {
         <div className={`border border-gray-300 pl-5 py-3 mt-6 ${showFilter ? '' :'hidden'} sm:block`}>
           <p className='mb-3 text-sm font-medium'>Shop by Categories</p>
           <div className='flex flex-col gap-2 text-sm font-light text-gray-700'>
-            <p className='flex gap-2'>
-              <input className='w-3' type="checkbox" value={'Dresses'} onChange={toggleCategory}/> Dresses
-            </p>
-            <p className='flex gap-2'>
-              <input className='w-3' type="checkbox" value={'Co-Ords'} onChange={toggleCategory}/> Co-Ords
-            </p>
-            <p className='flex gap-2'>
-              <input className='w-3' type="checkbox" value={'Jumpsuits'} onChange={toggleCategory}/> Jumpsuits/ Rompers
-            </p>
-            <p className='flex gap-2'>
-              <input className='w-3' type="checkbox" value={'Cover-ups'} onChange={toggleCategory}/> Cover-ups
-            </p>
-            <p className='flex gap-2'>
-              <input className='w-3' type="checkbox" value={'Shirts'} onChange={toggleCategory}/> Shirts
-            </p>
-            <p className='flex gap-2'>
-              <input className='w-3' type="checkbox" value={'Tops'} onChange={toggleCategory}/> Tops
-            </p>
-            <p className='flex gap-2'>
-              <input className='w-3' type="checkbox" value={'Lowers'} onChange={toggleCategory}/> Lowers
-            </p>
-            <p className='flex gap-2'>
-              <input className='w-3' type="checkbox" value={'Men'} onChange={toggleCategory}/> Men's collection
-            </p>
-            <p className='flex gap-2'>
-              <input className='w-3' type="checkbox" value={'Accessories'} onChange={toggleCategory}/> Accessories
-            </p>
+            {PRODUCT_CATEGORIES.map(cat => (
+              <p key={cat} className='flex gap-2'>
+                <input className='w-3' type="checkbox" value={cat} onChange={toggleCategory}/> 
+                {cat === 'Men' ? "Men's collection" : cat}
+              </p>
+            ))}
           </div>
         </div>
         {/* SubCategory Filter */}
         <div className={`border border-gray-300 pl-5 py-3 my-5 ${showFilter ? '' :'hidden'} sm:block`}>
           <p className='mb-3 text-sm font-medium'>Shop by Collection</p>
           <div className='flex flex-col gap-2 text-sm font-light text-gray-700'>
-            <p className='flex gap-2'>
-              <input className='w-3' type="checkbox" value={'New Arrivals'} onChange={toggleSubCategory}/> <span className='font-bold'>New Arrivals</span>
-            </p>
-            <p className='flex gap-2'>
-              <input className='w-3' type="checkbox" value={'Best sellers'} onChange={toggleSubCategory}/> <span className='font-bold'>Best sellers</span>
-            </p>
-            <p className='flex gap-2'>
-              <input className='w-3' type="checkbox" value={'Sale'} onChange={toggleSubCategory}/> <span className='font-bold'>Sale</span>
-            </p>
-            <p className='flex gap-2'>
-              <input className='w-3' type="checkbox" value={'Azure'} onChange={toggleSubCategory}/> Azure
-            </p>
-            <p className='flex gap-2'>
-              <input className='w-3' type="checkbox" value={'Palms & paradise'} onChange={toggleSubCategory}/> Palms & paradise
-            </p>
-            <p className='flex gap-2'>
-              <input className='w-3' type="checkbox" value={'Ebru'} onChange={toggleSubCategory}/> Ebru
-            </p>
-            <p className='flex gap-2'>
-              <input className='w-3' type="checkbox" value={'Shades of you'} onChange={toggleSubCategory}/> Shades of you
-            </p>
-            <p className='flex gap-2'>
-              <input className='w-3' type="checkbox" value={'Curio'} onChange={toggleSubCategory}/> Curio
-            </p>
+            {PRODUCT_SUBCATEGORIES.map(subCat => (
+              <p key={subCat} className='flex gap-2'>
+                <input className='w-3' type="checkbox" value={subCat} onChange={toggleSubCategory}/> 
+                {['New Arrivals', 'Best sellers', 'Sale'].includes(subCat) ? 
+                  <span className='font-bold'>{subCat}</span> : subCat
+                }
+              </p>
+            ))}
           </div>
         </div>
       </div>
@@ -172,7 +136,7 @@ const Collection = () => {
         <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 gap-y-6'>
           {
             filterProducts.map((item,index)=>(
-              <ProductItem key={index} name={item.name} id={item._id} price={item.price} image={item.image} />
+              <ProductItem key={index} name={item.name} id={item._id} price={item.price} mrp={item.mrp} image={item.image} />
             ))
           }
         </div>

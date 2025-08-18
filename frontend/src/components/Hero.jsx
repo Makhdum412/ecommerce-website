@@ -1,24 +1,33 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useContext } from 'react'
 import { assets } from '../assets/assets'
+import { ShopContext } from '../context/ShopContext'
 
 const Hero = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
 
-  // Carousel slides data
-  const slides = [
-    {
-      id: 1,
-      image: assets.carousel
-    },
-    {
-      id: 2,
-      image: assets.carousel
-    },
-    {
-      id: 3,
-      image: assets.carousel
+  const { backendUrl } = useContext(ShopContext)
+
+  const [slides, setSlides] = useState([
+    { id: 1, image: assets.carousel },
+    { id: 2, image: assets.carousel },
+    { id: 3, image: assets.carousel }
+  ])
+
+  useEffect(() => {
+    const fetchSlides = async () => {
+      try {
+        const res = await fetch(`${backendUrl}/api/carousel/active`)
+        const data = await res.json()
+        if (data.success && data.slides?.length) {
+          const mapped = data.slides.map((s, idx) => ({ id: s._id || idx, image: s.imageUrl }))
+          setSlides(mapped)
+        }
+      } catch (err) {
+        // ignore, keep defaults
+      }
     }
-  ];
+    fetchSlides()
+  }, [backendUrl])
 
   // Auto-advance slides
   useEffect(() => {

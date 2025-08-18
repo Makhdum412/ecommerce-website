@@ -3,6 +3,7 @@ import {assets} from '../assets/assets'
 import axios from 'axios'
 import { backendUrl } from '../App'
 import { toast } from 'react-toastify'
+import { PRODUCT_CATEGORIES, PRODUCT_SUBCATEGORIES, PRODUCT_SIZES } from '../constants/categories.js'
 
 const Add = ({token}) => {
 
@@ -14,10 +15,11 @@ const Add = ({token}) => {
    const [name, setName] = useState("");
    const [description, setDescription] = useState("");
    const [price, setPrice] = useState("");
-   const [category, setCategory] = useState("Men");
-   const [subCategory, setSubCategory] = useState("Topwear");
+   const [category, setCategory] = useState("Dresses");
+   const [subCategory, setSubCategory] = useState("New Arrivals");
    const [bestseller, setBestseller] = useState(false);
    const [sizes, setSizes] = useState([]);
+   const [mrp, setMrp] = useState("");
 
    const onSubmitHandler = async (e) => {
     e.preventDefault();
@@ -33,6 +35,7 @@ const Add = ({token}) => {
       formData.append("subCategory",subCategory)
       formData.append("bestseller",bestseller)
       formData.append("sizes",JSON.stringify(sizes))
+      if (mrp) formData.append("mrp", mrp)
 
       image1 && formData.append("image1",image1)
       image2 && formData.append("image2",image2)
@@ -50,6 +53,7 @@ const Add = ({token}) => {
         setImage3(false)
         setImage4(false)
         setPrice('')
+        setMrp('')
       } else {
         toast.error(response.data.message)
       }
@@ -100,29 +104,20 @@ const Add = ({token}) => {
             <div>
               <p className='mb-2'>Product category</p>
               <select onChange={(e) => setCategory(e.target.value)} className='w-full px-3 py-2'>
-                  <option value="Dresses">Dresses</option>
-                  <option value="Co-Ords">Co-Ords</option>
-                  <option value="Jumpsuits">Jumpsuits</option>
-                  <option value="Cover-ups">Cover-ups</option>
-                  <option value="Shirts">Shirts</option>
-                  <option value="Tops">Tops</option>
-                  <option value="Lowers">Lowers</option>
-                  <option value="Men">Men's collection</option>
-                  <option value="Accessories">Accessories</option>
+                  {PRODUCT_CATEGORIES.map(cat => (
+                    <option key={cat} value={cat}>
+                      {cat === 'Men' ? "Men's collection" : cat}
+                    </option>
+                  ))}
               </select>
             </div>
 
             <div>
               <p className='mb-2'>Sub category</p>
               <select onChange={(e) => setSubCategory(e.target.value)} className='w-full px-3 py-2'>
-                  <option value="New Arrivals">New Arrivals</option>
-                  <option value="Best sellers">Best sellers</option>
-                  <option value="Sale">Sale</option>
-                  <option value="Azure">Azure</option>
-                  <option value="Palms & paradise">Palms & paradise</option>
-                  <option value="Ebru">Ebru</option>
-                  <option value="Shades of you">Shades of you</option>
-                  <option value="Curio">Curio</option>
+                  {PRODUCT_SUBCATEGORIES.map(subCat => (
+                    <option key={subCat} value={subCat}>{subCat}</option>
+                  ))}
               </select>
             </div>
 
@@ -131,30 +126,21 @@ const Add = ({token}) => {
               <input onChange={(e) => setPrice(e.target.value)} value={price} className='w-full px-3 py-2 sm:w-[120px]' type="Number" placeholder='25' />
             </div>
 
+            <div>
+              <p className='mb-2'>MRP (optional)</p>
+              <input onChange={(e) => setMrp(e.target.value)} value={mrp} className='w-full px-3 py-2 sm:w-[120px]' type="Number" placeholder='30' />
+            </div>
+
         </div>
 
         <div>
           <p className='mb-2'>Product Sizes</p>
           <div className='flex gap-3'>
-            <div onClick={()=>setSizes(prev => prev.includes("S") ? prev.filter( item => item !== "S") : [...prev,"S"])}>
-              <p className={`${sizes.includes("S") ? "bg-pink-100" : "bg-slate-200" } px-3 py-1 cursor-pointer`}>S</p>
-            </div>
-            
-            <div onClick={()=>setSizes(prev => prev.includes("M") ? prev.filter( item => item !== "M") : [...prev,"M"])}>
-              <p className={`${sizes.includes("M") ? "bg-pink-100" : "bg-slate-200" } px-3 py-1 cursor-pointer`}>M</p>
-            </div>
-
-            <div onClick={()=>setSizes(prev => prev.includes("L") ? prev.filter( item => item !== "L") : [...prev,"L"])}>
-              <p className={`${sizes.includes("L") ? "bg-pink-100" : "bg-slate-200" } px-3 py-1 cursor-pointer`}>L</p>
-            </div>
-
-            <div onClick={()=>setSizes(prev => prev.includes("XL") ? prev.filter( item => item !== "XL") : [...prev,"XL"])}>
-              <p className={`${sizes.includes("XL") ? "bg-pink-100" : "bg-slate-200" } px-3 py-1 cursor-pointer`}>XL</p>
-            </div>
-
-            <div onClick={()=>setSizes(prev => prev.includes("XXL") ? prev.filter( item => item !== "XXL") : [...prev,"XXL"])}>
-              <p className={`${sizes.includes("XXL") ? "bg-pink-100" : "bg-slate-200" } px-3 py-1 cursor-pointer`}>XXL</p>
-            </div>
+            {PRODUCT_SIZES.map(size => (
+              <div key={size} onClick={()=>setSizes(prev => prev.includes(size) ? prev.filter( item => item !== size) : [...prev,size])}>
+                <p className={`${sizes.includes(size) ? "bg-pink-100" : "bg-slate-200" } px-3 py-1 cursor-pointer`}>{size}</p>
+              </div>
+            ))}
           </div>
         </div>
 
